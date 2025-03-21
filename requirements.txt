@@ -137,6 +137,16 @@ pinecone-client
 langchain
 langchain_community
 langchain_huggingface
+google-ai-generativelanguage==0.6.10
+google-api-core==2.24.0
+google-api-python-client==2.157.0
+google-auth==2.37.0
+google-auth-httplib2==0.2.0
+google-cloud-speech==2.31.1
+google-cloud-texttospeech==2.25.1
+google-generativeai==0.8.3
+googleapis-common-protos==1.66.0
+pydub==0.25.1
 
 pypdf
 
