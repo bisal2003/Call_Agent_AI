@@ -54,7 +54,7 @@ playsound==1.2.2
 propcache==0.3.0
 protobuf==5.29.4
 psutil==7.0.0
-https://download.lfd.uci.edu/pythonlibs/wheelhouse/PyAudio‑0.2.11‑cp311‑cp311‑manylinux1_x86_64.whl
+pyaudio @ https://files.pythonhosted.org/packages/4d/56/c799bfa5050e7e428b3f2eb4295b4ef2dc1e7ae759dbe293d0a2f1fa00e6/PyAudio-0.2.11.tar.gz
 pydantic==2.10.6
 pydantic-settings==2.8.1
 pydantic_core==2.27.2
