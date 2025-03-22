@@ -4,7 +4,7 @@ from google.cloud import texttospeech
 from pydub import AudioSegment
 from pydub.playback import play
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"../../neurosphere-453417-a13fa049f648.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"neurosphere-453417-a13fa049f648.json"
 
 def save_audio_from_response(response, sample_rate=16000):
     """
