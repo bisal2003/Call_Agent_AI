@@ -1,0 +1,15 @@
+{
+    "type": "service_account",
+    "project_id": "neurosphere-453417",
+    "private_key_id": "a13fa049f6482b04a9bea956ca93f9207abb59fd",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDG29TkSDr4vBfk\nXv41fpyVVB8NYynmdED5BDYlsHy3kS+OrAEKZTtUcW/EJVAme93znhAFLiQJ3Ib1\nFgQsvu2axFgRoBVLHkR2Wy4BPMonmz24awjipzRZ23yMSVtai9M4SH9wyq1dudhc\nera2MVd+iwm8S78vjlBWqUuy+f1hvVQxuxrfobi9TIZYk5kTuQjdhsFVgO3+Grwg\ngXklOEb7CvS9ZnTt0pe2teG9V0OghF0EBNvsqrn1gtKPSSbXlx82rDLdQMDOytur\n+H1j+dHDk1zBYEnqdg1WOQj8w8vEnZSO4aopnn8mZ+FCDSo3KMFO2mtOt8T94bb9\nrYutWRbZAgMBAAECggEANLzTMnF3dkTH31BUAZLg6vdivtWoJI57Nq8nvwoVoUc3\nQhKauguL1wK4fd/ZaENcYwHtxLnuY9Eg13mtxMIj2HIu2wnF6+SMioj24+wfvq48\niZ6VPirSxuvfFYNU32gKrbgIWDzgCmXBnBENSLdAOXadL9s0ymNnKfx+72m+CX/J\nV8UBSDxXyEdhCi6A/u+s0vlrIWszTVKccEtiwpj6TUPQpo1KfjyeKX0WpOKP+ROB\nR1n1WGxQdiFEl4BHXwq+Ek9X6B2irfWhiBAZXLv9EpKWS1Qryj3bpT4LUtIZboNe\n6ELSHu749v4PeElBsDo7X1TPaqw3t3huXahSgFV94wKBgQDkXQmkfm3jZPM9GXAy\nZ7wVHcksO09kiRwTKeHPWOW228JMjG1SHfNbDqFhxF3Yjo5lHjXcohwcqHfUQZ6K\n8cHeS8NV/TwQeDK0MSS9vld+KtVtQVV58AS/rwBZfzh1vkf6uPIZCTvsY8G7DL7x\nGkGN/aSlLfJFS/y/VVaSoFIdiwKBgQDe7LQ3TG66RWl9qM/azgCnFsOgkGH4crww\n3P9fW3T24kgEfHI7JObaeHE7kDt1XwRFwhJ51uqKcOt2XTUlWHI8NfxAIqrHGcuS\n5Ym0zw39+4kNcDsjEvbl/OuR8DgetxKGid8BdkT0V2uhghmahFq/yce6ksBDpDGx\np+6R/v9xqwKBgQC3PwUWzzEEsKQS2k/S0rT1SOJ+MNWjefZiVlBR3ybuFegTHvg2\nVbxKzDGpzzXzKWmQMK7N7fOa94C4fTNokVidNbR4Uu2Y1aryNyEhdRSmNF7w/eVG\nJNjaq+Ye6tx2dwsxYKk8d9Fy/hWeMDskI4qJEwjEV1s6SiB1tFf07tsVwwKBgDe1\nu8veBAX09sn6eAdcV/lpzPXBX1pxgepMMF2qQ263WfwVBY8WR8LtOo8CGnnYhv7P\n40IjnXV/hriLzo5IrjOx4ho9D6S2I5PQXTucSwjf5X5AP+ciBCWxsUVFXSD/61dH\n+T0qS00s068HDlL5JJytVoafygCddfXJ2+sMaNYFAoGAQdlSMUcqQo48U9A5za+M\nb+JS1W37KxPr3ZAuwzOQDe7huqyUHbXDwZTanKEkWR3PfuF+dowo3TJyXFSY4HBx\nI5Ba4mruNzfFkAiVMwOxbUU0zJ3DPkb2vnwZGd3RGw/5AUhEmAN+3XFhOzFziXjn\nC8RUhorHy9gQVlKqNTc4gAc=\n-----END PRIVATE KEY-----\n",
+    "client_email": "neruro@neurosphere-453417.iam.gserviceaccount.com",
+    "client_id": "114196092903988216964",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/neruro%40neurosphere-453417.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
+
+  
