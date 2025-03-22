@@ -1,0 +1,6 @@
+✅ Groq LLM initialized and logged to wandb.
+Audio saved successfully as frontend/src/audio/5fd2eb0f-a8fd-4514-ba89-438635da8c88.wav.
+Generated audio: 5fd2eb0f-a8fd-4514-ba89-438635da8c88.wav
+127.0.0.1 - - [22/Mar/2025 20:14:15] "GET /agent HTTP/1.1" 200 -
+Audio file requested: 5fd2eb0f-a8fd-4514-ba89-438635da8c88.wav
+127.0.0.1 - - [22/Mar/2025 20:14:15] "[35m[1mGET /audio/5fd2eb0f-a8fd-4514-ba89-438635da8c88.wav HTTP/1.1[0m" 206 -

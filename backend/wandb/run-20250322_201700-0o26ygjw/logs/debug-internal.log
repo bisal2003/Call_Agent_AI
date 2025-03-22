@@ -1,0 +1,7 @@
+{"time":"2025-03-22T20:17:00.993717+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/probindhakal/Desktop/NITS_NEURATHON_CALL_AGENT/ai-phone-agent/wandb/run-20250322_201700-0o26ygjw/logs/debug-core.log"}
+{"time":"2025-03-22T20:17:01.107546+05:30","level":"INFO","msg":"created new stream","id":"0o26ygjw"}
+{"time":"2025-03-22T20:17:01.107733+05:30","level":"INFO","msg":"stream: started","id":"0o26ygjw"}
+{"time":"2025-03-22T20:17:01.107907+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"0o26ygjw"}
+{"time":"2025-03-22T20:17:01.107938+05:30","level":"INFO","msg":"sender: started","stream_id":"0o26ygjw"}
+{"time":"2025-03-22T20:17:01.108135+05:30","level":"INFO","msg":"handler: started","stream_id":"0o26ygjw"}
+{"time":"2025-03-22T20:17:01.712759+05:30","level":"INFO","msg":"Starting system monitor"}

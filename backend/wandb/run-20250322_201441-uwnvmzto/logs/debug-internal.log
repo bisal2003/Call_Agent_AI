@@ -1,0 +1,10 @@
+{"time":"2025-03-22T20:14:41.817414+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/probindhakal/Desktop/NITS_NEURATHON_CALL_AGENT/ai-phone-agent/wandb/run-20250322_201441-uwnvmzto/logs/debug-core.log"}
+{"time":"2025-03-22T20:14:41.927475+05:30","level":"INFO","msg":"created new stream","id":"uwnvmzto"}
+{"time":"2025-03-22T20:14:41.927523+05:30","level":"INFO","msg":"stream: started","id":"uwnvmzto"}
+{"time":"2025-03-22T20:14:41.927557+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"uwnvmzto"}
+{"time":"2025-03-22T20:14:41.927716+05:30","level":"INFO","msg":"handler: started","stream_id":"uwnvmzto"}
+{"time":"2025-03-22T20:14:41.927734+05:30","level":"INFO","msg":"sender: started","stream_id":"uwnvmzto"}
+{"time":"2025-03-22T20:14:42.547443+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-22T20:15:36.772057+05:30","level":"INFO","msg":"stream: closing","id":"uwnvmzto"}
+{"time":"2025-03-22T20:15:36.772348+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-22T20:15:36.774154+05:30","level":"INFO","msg":"Stopped system monitor"}

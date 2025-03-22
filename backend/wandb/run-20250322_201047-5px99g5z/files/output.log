@@ -1,0 +1,70 @@
+✅ Groq LLM initialized and logged to wandb.
+Audio saved successfully as frontend/src/audio/10937e03-566f-4fd7-b749-fce6e27f295a.wav.
+Generated audio: 10937e03-566f-4fd7-b749-fce6e27f295a.wav
+127.0.0.1 - - [22/Mar/2025 20:10:50] "GET /agent HTTP/1.1" 200 -
+Audio file requested: 10937e03-566f-4fd7-b749-fce6e27f295a.wav
+127.0.0.1 - - [22/Mar/2025 20:10:50] "[35m[1mGET /audio/10937e03-566f-4fd7-b749-fce6e27f295a.wav HTTP/1.1[0m" 206 -
+Saved temporary audio file: frontend/src/audio/frontend_recording.wav
+Processed audio file: frontend/src/audio/processed_recording.wav
+Transcribing...
+Transcript: Fine fine.
+User input from speech: Fine fine.
+✅ Groq LLM initialized and logged to wandb.
+✅ Groq LLM initialized and logged to wandb.
+Audio saved successfully as frontend/src/audio/adb6e2a6-e847-4b13-a3b0-6505bfc04b19.wav.
+Generated audio: adb6e2a6-e847-4b13-a3b0-6505bfc04b19.wav
+127.0.0.1 - - [22/Mar/2025 20:11:11] "POST /upload_audio HTTP/1.1" 200 -
+Audio file requested: adb6e2a6-e847-4b13-a3b0-6505bfc04b19.wav
+127.0.0.1 - - [22/Mar/2025 20:11:11] "[35m[1mGET /audio/adb6e2a6-e847-4b13-a3b0-6505bfc04b19.wav HTTP/1.1[0m" 206 -
+Saved temporary audio file: frontend/src/audio/frontend_recording.wav
+Processed audio file: frontend/src/audio/processed_recording.wav
+Transcribing...
+Transcript: I have an older TV with blurry screen.
+User input from speech: I have an older TV with blurry screen.
+✅ Groq LLM initialized and logged to wandb.
+✅ Groq LLM initialized and logged to wandb.
+Audio saved successfully as frontend/src/audio/c7ba4f32-292a-4a5b-8fb9-01bcfdb11271.wav.
+Generated audio: c7ba4f32-292a-4a5b-8fb9-01bcfdb11271.wav
+127.0.0.1 - - [22/Mar/2025 20:11:29] "POST /upload_audio HTTP/1.1" 200 -
+Audio file requested: c7ba4f32-292a-4a5b-8fb9-01bcfdb11271.wav
+127.0.0.1 - - [22/Mar/2025 20:11:30] "[35m[1mGET /audio/c7ba4f32-292a-4a5b-8fb9-01bcfdb11271.wav HTTP/1.1[0m" 206 -
+Saved temporary audio file: frontend/src/audio/frontend_recording.wav
+Processed audio file: frontend/src/audio/processed_recording.wav
+Transcribing...
+Transcript: Yes, please.
+User input from speech: Yes, please.
+✅ Groq LLM initialized and logged to wandb.
+knowledge_base
+['new TV models']
+✅ Groq LLM initialized and logged to wandb.
+Audio saved successfully as frontend/src/audio/22a6c516-5fb6-467b-8e49-72170757eb22.wav.
+Generated audio: 22a6c516-5fb6-467b-8e49-72170757eb22.wav
+127.0.0.1 - - [22/Mar/2025 20:11:45] "POST /upload_audio HTTP/1.1" 200 -
+Audio file requested: 22a6c516-5fb6-467b-8e49-72170757eb22.wav
+127.0.0.1 - - [22/Mar/2025 20:11:45] "[35m[1mGET /audio/22a6c516-5fb6-467b-8e49-72170757eb22.wav HTTP/1.1[0m" 206 -
+Saved temporary audio file: frontend/src/audio/frontend_recording.wav
+Processed audio file: frontend/src/audio/processed_recording.wav
+Transcribing...
+Transcript: Yes, please.
+User input from speech: Yes, please.
+✅ Groq LLM initialized and logged to wandb.
+✅ Groq LLM initialized and logged to wandb.
+Audio saved successfully as frontend/src/audio/d6497cd2-fa0e-4ed4-bb2b-07440469a103.wav.
+Generated audio: d6497cd2-fa0e-4ed4-bb2b-07440469a103.wav
+127.0.0.1 - - [22/Mar/2025 20:12:07] "POST /upload_audio HTTP/1.1" 200 -
+Audio file requested: d6497cd2-fa0e-4ed4-bb2b-07440469a103.wav
+127.0.0.1 - - [22/Mar/2025 20:12:07] "[35m[1mGET /audio/d6497cd2-fa0e-4ed4-bb2b-07440469a103.wav HTTP/1.1[0m" 206 -
+Saved temporary audio file: frontend/src/audio/frontend_recording.wav
+Processed audio file: frontend/src/audio/processed_recording.wav
+Transcribing...
+Transcript: 85 in.
+User input from speech: 85 in.
+✅ Groq LLM initialized and logged to wandb.
+knowledge_base
+['85 inch 4K TV']
+✅ Groq LLM initialized and logged to wandb.
+Audio saved successfully as frontend/src/audio/0617d74a-e870-47d6-bd48-cf058da06126.wav.
+Generated audio: 0617d74a-e870-47d6-bd48-cf058da06126.wav
+127.0.0.1 - - [22/Mar/2025 20:12:29] "POST /upload_audio HTTP/1.1" 200 -
+Audio file requested: 0617d74a-e870-47d6-bd48-cf058da06126.wav
+127.0.0.1 - - [22/Mar/2025 20:12:29] "[35m[1mGET /audio/0617d74a-e870-47d6-bd48-cf058da06126.wav HTTP/1.1[0m" 206 -

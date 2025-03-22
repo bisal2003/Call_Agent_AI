@@ -1,0 +1,15 @@
+{"time":"2025-03-22T19:57:31.570088+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/Users/probindhakal/Desktop/NITS_NEURATHON_CALL_AGENT/ai-phone-agent/wandb/run-20250322_195731-ly3yf2wv/logs/debug-core.log"}
+{"time":"2025-03-22T19:57:31.682138+05:30","level":"INFO","msg":"created new stream","id":"ly3yf2wv"}
+{"time":"2025-03-22T19:57:31.682188+05:30","level":"INFO","msg":"stream: started","id":"ly3yf2wv"}
+{"time":"2025-03-22T19:57:31.682255+05:30","level":"INFO","msg":"handler: started","stream_id":"ly3yf2wv"}
+{"time":"2025-03-22T19:57:31.682334+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"ly3yf2wv"}
+{"time":"2025-03-22T19:57:31.682643+05:30","level":"INFO","msg":"sender: started","stream_id":"ly3yf2wv"}
+{"time":"2025-03-22T19:57:32.388287+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-22T20:00:58.689998+05:30","level":"INFO","msg":"stream: closing","id":"ly3yf2wv"}
+{"time":"2025-03-22T20:00:58.69022+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-22T20:00:58.694677+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-22T20:01:00.037339+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-22T20:01:00.692331+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"ly3yf2wv"}
+{"time":"2025-03-22T20:01:00.693103+05:30","level":"INFO","msg":"handler: closed","stream_id":"ly3yf2wv"}
+{"time":"2025-03-22T20:01:00.693103+05:30","level":"INFO","msg":"sender: closed","stream_id":"ly3yf2wv"}
+{"time":"2025-03-22T20:01:00.693129+05:30","level":"INFO","msg":"stream: closed","id":"ly3yf2wv"}
