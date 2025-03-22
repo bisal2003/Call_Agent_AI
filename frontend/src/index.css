@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Square Game';
+  src: url('/fonts/Square Game.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vampire Wars';
+  src: url('/fonts/Vampire Wars.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.centerhead{
+  font-family: 'Square Game', sans-serif;
+}
