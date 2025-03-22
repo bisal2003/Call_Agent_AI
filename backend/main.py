@@ -298,4 +298,4 @@ def upload_audio():
         return jsonify({"error": f"Failed to process audio: {str(e)}"}), 500
 # Run the Flask app
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
