@@ -190,7 +190,7 @@ const Home = () => {
       setIsProcessing(true);
 
       const response = await axios.get("http://127.0.0.1:5000/agent", {
-        timeout: 30000,
+        timeout: 0,
       });
 
       setAudioUrl(response.data.audioUrl);
