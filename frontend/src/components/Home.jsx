@@ -10,7 +10,6 @@ const Home = () => {
         initial={{ opacity: 0, x: 500 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        whileHover={{ scale: 1.0, textShadow: "0px 0px 8px rgba(255,255,255,0.8)" }}
       >
         CALL.E
       </motion.h1>
