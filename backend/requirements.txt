@@ -23,7 +23,7 @@ bidict==0.23.1
 blessed==1.20.0
 blinker==1.9.0
 cachetools==5.5.0
-git+https://git@github.com/bisal2003/Call_Agent_AI.git@53b8eae11091cdf98092d57d1a0fb84f57712bda#egg=Call_Agent_AI
+git+ssh://git@github.com/bisal2003/Call_Agent_AI.git@53b8eae11091cdf98092d57d1a0fb84f57712bda#egg=Call_Agent_AI
 certifi==2024.12.14
 cffi==1.17.1
 channels==4.2.0
