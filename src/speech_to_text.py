@@ -89,26 +89,44 @@ from collections import deque
 #         stream.close()
 #         p.terminate()
 
-def speech_to_text(filename):
-    import os
-    from groq import Groq
+# def speech_to_text(filename):
+#     import os
+#     from groq import Groq
 
-    # Initialize the Groq client
-    client = Groq()
+#     # Initialize the Groq client
+#     client = Groq()
 
 
-    # Open the audio file
-    with open(filename, "rb") as file:
-        transcription = client.audio.transcriptions.create(
-        file=(filename, file.read()), 
-        model="whisper-large-v3-turbo", 
-        prompt="Specify context or spelling",  
-        response_format="json",  
-        language="en",  
-        temperature=0.0  
-        )
+#     # Open the audio file
+#     with open(filename, "rb") as file:
+#         transcription = client.audio.transcriptions.create(
+#         file=(filename, file.read()), 
+#         model="whisper-large-v3-turbo", 
+#         prompt="Specify context or spelling",  
+#         response_format="json",  
+#         language="en",  
+#         temperature=0.0  
+#         )
 
-        return transcription.text
+#         return transcription.text
+def speech_to_text():
+    import sounddevice as sd
+    from scipy.io.wavfile import write
+
+# Configuration
+    duration = 5  # seconds
+    filename = "recording.wav"
+    sample_rate = 44100  # standard audio sampling rate
+
+# Record audio
+    print("Recording...")
+    recording = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=1)
+    sd.wait()  # Wait until recording is finished
+    print("Recording complete")
+
+# Save as WAV file
+    write(filename, sample_rate, recording)
+    print(f"Saved as {filename}")
 
 if __name__ == "__main__":
     # filename = audio_file()

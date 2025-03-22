@@ -96,4 +96,5 @@ def conversation_chain_with_tools(llm):
 
 if __name__ == "__main__":
     print(conversation_chain(get_llm()))
+    print(conversation_chain_with_tools(get_llm()))
     

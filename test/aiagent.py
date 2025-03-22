@@ -8,7 +8,7 @@ load_dotenv()
 def Ai_Agent(question="What is the weather report in india today"):
     agent = Agent(
         name="Agent",
-        model=Groq(id="llama-3.3-70b-versatile"),
+        model=Groq(),
         description=
                     "Your goal is to provide a professional, empathetic, and natural conversation "
                     "to build trust and close deals."

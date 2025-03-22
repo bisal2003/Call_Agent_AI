@@ -1,6 +1,8 @@
 # A sales agent qualifies the lead to ensure they are speaking with the decision-maker or a relevant stakeholder.
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
+# from langchain_community.vectorstores import 
+from langchain_pinecone import PineconeVectorStore
+
 from langchain.agents import tool, create_tool_calling_agent
 from src.variables import company_name
 import json

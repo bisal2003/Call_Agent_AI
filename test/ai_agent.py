@@ -1,3 +1,4 @@
+# ai_phone_agent.py
 from phi.agent import Agent
 from phi.model.groq import Groq
 from dotenv import load_dotenv
@@ -14,7 +15,7 @@ def ai_phone_agent(customer_info, product_details):
     # Create the Groq-based agent
     agent = Agent(
         name="SalesAgent",
-        model=Groq(id="llama-3.3-70b-versatile"),  # Use the Groq model
+        model=Groq(),  # Use the Groq model
         description=(
             "You are a quick, engaging, and professional sales agent. Be concise, relatable, and friendly. "
             "Use natural language with fillers like 'umm' for realism. Focus on capturing attention quickly, "
@@ -36,7 +37,7 @@ def ai_phone_agent(customer_info, product_details):
     return response.content
 
 # Example usage
-if __name__ == "__main__":
+if __name__ == "_main_":
     customer_info = "The customer is a small business owner in the retail industry, looking to improve online sales."
     product_details = "Our product is an AI-powered e-commerce tool that improves website conversion rates by 30%."
 
