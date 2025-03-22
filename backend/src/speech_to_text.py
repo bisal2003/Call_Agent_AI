@@ -4,7 +4,7 @@ import wave
 from google.cloud import speech
 
 # Set Google Cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"../../neurosphere-453417-a13fa049f648.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"neurosphere-453417-a13fa049f648.json"
 
 def audio_file(file_path, duration=5):
     """Record audio at 16 kHz sample rate"""
