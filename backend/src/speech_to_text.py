@@ -1,74 +1,97 @@
 import os
 import pyaudio
 import wave
-from google.cloud import speech
+from collections import deque
+from groq import Groq
+import time
+# Audio configuration
+CHUNK = 1024
+FORMAT = pyaudio.paInt16
+CHANNELS = 1
+RATE = 16000
+SILENCE_THRESHOLD = 2000
+SILENCE_DURATION = 1.0
+SILENCE_DELAY = 5
+DETECTION_START_SECONDS = 1.5
 
-# Set Google Cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"/Users/probindhakal/Desktop/NITS_NEURATHON_CALL_AGENT/ai-phone-agent/neurosphere-453417-a13fa049f648.json"
+def detect_silence(audio_chunk):
+    """Detect silence based on RMS energy."""
+    rms = (sum(int(sample)**2 for sample in audio_chunk) / len(audio_chunk)) ** 0.5
+    return rms < SILENCE_THRESHOLD
 
-def audio_file(file_path, duration=5):
-    """Record audio at 16 kHz sample rate"""
-    audio = pyaudio.PyAudio()
-    
-    stream = audio.open(format=pyaudio.paInt16,
-                      channels=1,
-                      rate=16000,  # Consistently using 16 kHz
-                      input=True,
-                      frames_per_buffer=1024)
-    
-    print("Recording... Speak now!")
-    frames = []
-    
-    for _ in range(0, int(16000 / 1024 * duration)):
-        data = stream.read(1024)
-        frames.append(data)
-    
-    print("Recording finished.")
-    stream.stop_stream()
-    stream.close()
-    audio.terminate()
-    
-    with wave.open(file_path, "wb") as wf:
-        wf.setnchannels(1)
-        wf.setsampwidth(audio.get_sample_size(pyaudio.paInt16))
-        wf.setframerate(16000)  # Consistently using 16 kHz
+def save_audio(filename, frames, rate):
+    """Save audio frames to a WAV file."""
+    with wave.open(filename, 'wb') as wf:
+        wf.setnchannels(CHANNELS)
+        wf.setsampwidth(pyaudio.PyAudio().get_sample_size(FORMAT))
+        wf.setframerate(rate)
         wf.writeframes(b''.join(frames))
 
-def speech_to_text(file_path):
-    """
-    Convert speech to text using Google Cloud Speech-to-Text API
-    Expects 16 kHz audio input
-    """
-    client = speech.SpeechClient()
-    
+def record_audio():
+    p = pyaudio.PyAudio()
+    stream = p.open(
+        format=FORMAT,
+        channels=CHANNELS,
+        rate=RATE,
+        input=True,
+        frames_per_buffer=CHUNK,
+    )
+
+    print("Recording... Press Ctrl+C to stop.")
+    audio_frames = []
+    silence_queue = deque(maxlen=SILENCE_DELAY)
+    silence_start_time = None
+    recording_start_time = time.time()
+
     try:
-        with open(file_path, "rb") as audio_file:
-            audio_data = audio_file.read()
-        
-        audio = speech.RecognitionAudio(content=audio_data)
-        config = speech.RecognitionConfig(
-            encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
-            sample_rate_hertz=16000,  # Consistently using 16 kHz
-            language_code="en-US",
-            # Optional: Enable automatic punctuation
-            enable_automatic_punctuation=True,
+        while True:
+            audio_data = stream.read(CHUNK, exception_on_overflow=False)
+            audio_frames.append(audio_data)
+            
+            elapsed_time = time.time() - recording_start_time
+            if elapsed_time < DETECTION_START_SECONDS:
+                continue
+            
+            audio_array = list(wave.struct.unpack('%dh' % CHUNK, audio_data))
+            is_silent = detect_silence(audio_array)
+            silence_queue.append(is_silent)
+
+            if all(silence_queue):
+                if silence_start_time is None:
+                    silence_start_time = time.time()
+                elif time.time() - silence_start_time >= SILENCE_DURATION:
+                    filename = "audio_segment.wav"
+                    save_audio(filename, audio_frames, RATE)
+                    print(f"Saved: {filename}")
+                    return filename
+            else:
+                silence_start_time = None
+    except KeyboardInterrupt:
+        print("Recording stopped.")
+        if audio_frames:
+            filename = "audio_segment.wav"
+            save_audio(filename, audio_frames, RATE)
+            print(f"Saved: {filename}")
+            return filename
+    finally:
+        stream.stop_stream()
+        stream.close()
+        p.terminate()
+
+def speech_to_text(filename):
+    client = Groq()
+
+    with open(filename, "rb") as file:
+        transcription = client.audio.transcriptions.create(
+            file=(filename, file.read()), 
+            model="whisper-large-v3-turbo", 
+            prompt="Specify context or spelling",  
+            response_format="json",  
+            language="en",  
+            temperature=0.0  
         )
-        
-        print("Transcribing...")
-        response = client.recognize(config=config, audio=audio)
-        
-        if not response.results:
-            print("No speech detected.")
-            return None
-        else:
-            transcript = response.results[0].alternatives[0].transcript
-            print(f"Transcript: {transcript}")
-            return transcript
-    except Exception as e:
-        print(f"Error during speech recognition: {e}")
-        raise
+        return transcription.text
 
 if __name__ == "__main__":
-    file_path = "audio_input.wav"
-    audio_file(file_path)
-    speech_to_text(file_path)
+    filename = record_audio()
+    print("Transcription:", speech_to_text(filename))
