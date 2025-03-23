@@ -190,7 +190,7 @@ const Home = () => {
       setIsProcessing(true);
 
       const response = await axios.get("https://call-agent-ai-backend-final.onrender.com/agent", {
-        timeout: 30000,
+        timeout: 0,
       });
 
       setAudioUrl(response.data.audioUrl);
