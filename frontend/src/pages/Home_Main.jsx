@@ -20,6 +20,7 @@ const Home = () => {
   const [withTools, setWithTools] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isClicked, setIsClicked] = useState(false);
 
   // Audio states
   const [audioUrl, setAudioUrl] = useState(null);
@@ -73,6 +74,7 @@ const Home = () => {
         { withCredentials: true }
       );
       setIsSubmitted(true);
+      setIsClicked(true);
       toast.success("Form submitted successfully!");
       handleMicClick(); // Start the conversation after form submission
     } catch (error) {
@@ -333,7 +335,8 @@ const Home = () => {
           </div>
           <button
             type="submit"
-            className="w-full mt-4 p-2 bg-blue-700 rounded hover:bg-blue-800 transition"
+            className="w-full mt-4 p-2 bg-blue-700 rounded hover:bg-blue-800 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+            disabled={isClicked}
           >
             Submit to start call.
           </button>
