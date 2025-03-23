@@ -59,7 +59,7 @@ const Home = () => {
 
     try {
       await axios.post(
-        "http://127.0.0.1:5000/get_info",
+        "https://call-agent-ai-backend-final.onrender.com/get_info",
         {
           salespersonName,
           salespersonRole,
@@ -157,7 +157,7 @@ const Home = () => {
       //   }
       // );
       const response = await axios.post(
-        "http://127.0.0.1:5000/upload_audio",
+        "https://call-agent-ai-backend-final.onrender.com/upload_audio",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -189,7 +189,7 @@ const Home = () => {
       setIsMicActive(true);
       setIsProcessing(true);
 
-      const response = await axios.get("http://127.0.0.1:5000/agent", {
+      const response = await axios.get("https://call-agent-ai-backend-final.onrender.com/agent", {
         timeout: 30000,
       });
 
@@ -213,7 +213,7 @@ const Home = () => {
   // Play audio when audioUrl changes
   useEffect(() => {
     if (audioUrl) {
-      const fullAudioUrl = `http://127.0.0.1:5000/audio/${audioUrl}`;
+      const fullAudioUrl = `https://call-agent-ai-backend-final.onrender.com/audio/${audioUrl}`;
       console.log("Attempting to play audio from:", fullAudioUrl);
 
       const audio = new Audio(fullAudioUrl);
