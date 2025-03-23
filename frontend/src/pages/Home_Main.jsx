@@ -247,7 +247,7 @@ const Home = () => {
 
   const handleDownloadConversation = () => {
     const fileName = "conversation_history.pdf"; // PDF file name
-    const filePath = `/audio/${fileName}`; // Assuming the file is inside src/audio
+    const filePath = `frontend/src/audio/${fileName}`; // Assuming the file is inside src/audio
 
     // Create an anchor element to trigger download
     const link = document.createElement("a");
