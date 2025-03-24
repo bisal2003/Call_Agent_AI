@@ -52,15 +52,17 @@ pip install -r requirements.txt
 # Frontend setup
 cd ../frontend
 npm install
+
 Configuration
 Create .env file:
-
 env
 Copy
 GROQ_API_KEY=your_groq_key
 PINECONE_API_KEY=your_pinecone_key
 WANDB_API_KEY=your_wandb_key
-INDEX_NAME=call-agent-ai-2
+INDEX_NAME=your index name
+
+
 🧠 Intelligent Pipeline
 mermaid
 Copy
@@ -73,6 +75,8 @@ graph TD
     E --> F
     F --> G[TTS Conversion]
     G --> H[Speech Output]
+
+
 📂 Project Structure
 Copy
 CALL.E/
