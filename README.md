@@ -45,60 +45,64 @@ Copy
 # Clone repository
 git clone https://github.com/yourusername/CALL.E.git
 
-# Backend setup
+## 🚀 Backend setup
 cd backend
 pip install -r requirements.txt
 
-# Frontend setup
+## 🚀 Frontend Setup
+```sh
 cd ../frontend
 npm install
+```
 
-Configuration
-Create .env file:
-env
-Copy
+## ⚙️ Configuration
+Create a `.env` file and add the following keys:
+```sh
 GROQ_API_KEY=your_groq_key
 PINECONE_API_KEY=your_pinecone_key
 WANDB_API_KEY=your_wandb_key
-INDEX_NAME=your index name
+INDEX_NAME=your_index_name
+```
 
-
-🧠 Intelligent Pipeline
-mermaid
-Copy
+## 🧠 Intelligent Pipeline
+```mermaid
 graph TD
-    A[Speech Input] --> B(STT Conversion)
-    B --> C{Intent Recognition}
-    C -->|Query| D[RAG Retrieval]
-    C -->|Command| E[Tool Execution]
-    D --> F[LLM Processing]
-    E --> F
-    F --> G[TTS Conversion]
-    G --> H[Speech Output]
+A[Speech Input] --> B(STT Conversion)
+B --> C{Intent Recognition}
+C -->|Query| D[RAG Retrieval]
+C -->|Command| E[Tool Execution]
+D --> F[LLM Processing]
+E --> F
+F --> G[TTS Conversion]
+G --> H[Speech Output]
+```
 
-
-📂 Project Structure
-Copy
+## 📂 Project Structure
+```
 CALL.E/
-├── backend/                 # Core AI components
-│   ├── src/                 # Source files
-│   │   ├── chains.py        # Conversation workflows
-│   │   ├── models.py        # LLM & Vector Store config
-│   │   └── tools.py         # Integration tools
-├── frontend/                # User interface
-│   ├── src/                 
-│   │   └── audio/           # Speech assets
-├── vector_store/            # Knowledge base
-└── wandb/                   # Experiment tracking
+├── backend/            # Core AI components
+│   ├── src/            # Source files
+│   │   ├── chains.py   # Conversation workflows
+│   │   ├── models.py   # LLM & Vector Store config
+│   │   ├── tools.py    # Integration tools
+├── frontend/           # User interface
+│   ├── src/
+│   │   └── audio/      # Speech assets
+├── vector_store/       # Knowledge base
+└── wandb/              # Experiment tracking
+```
 
-🏎️ Quick Start Example
-Copy
+## 🏎️ Quick Start Example
+```python
 # Initialize AI agent
 from src.models import get_retriever, create_rag_chain
 
 retriever = get_retriever()
 llm = get_llm()
 agent = create_rag_chain(retriever, llm)
+```
+
+
 
 # Start conversation
 response = agent.invoke({
