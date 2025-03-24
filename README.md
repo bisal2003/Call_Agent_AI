@@ -112,7 +112,7 @@ response = agent.invoke({
 print(response["result"])
 
 
-📈 Performance Optimization
+#📈 Performance Optimization
 Chunking Strategy: 512-token chunks with 20% overlap
 
 Embedding Model: all-mpnet-base-v2 (Hugging Face)
@@ -121,7 +121,7 @@ Indexing: Pinecone HNSW with 95%+ recall
 
 Training: Contrastive learning with 0.0001 lr
 
-📊 WandB Integration
+#📊 WandB Integration
 WandB Dashboard
 
 Real-time GPU utilization tracking
@@ -135,9 +135,9 @@ Retrieval quality metrics
 ![WhatsApp Image 2025-03-23 at 11 29 54_2849e303](https://github.com/user-attachments/assets/38e2e7df-281e-419a-b7ce-e43f638d856c)
 
 
-🏆 Acknowledgments
-NEURATHON 2025 Winning Solution
-CALL.E was recognized as the most innovative AI implementation at Asia's largest student hackathon, demonstrating exceptional performance in:
+###🏆 Acknowledgments
+##NEURATHON 2025 Winning Solution
+##CALL.E was recognized as the most innovative AI implementation at Asia's largest student hackathon, demonstrating exceptional performance in:
 
 Natural conversation flow
 
