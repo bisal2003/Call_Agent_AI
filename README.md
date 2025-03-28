@@ -4,6 +4,9 @@
 CALL.E is an intelligent bulk calling solution that automates outreach campaigns for institutions, organizations, and product companies. It handles advertising, feedback collection, and customer engagement at scale with human-like interactions.
 
 ---
+![image](https://github.com/user-attachments/assets/8f14ab67-56be-45de-af0d-4fd2db65c526)
+![image](https://github.com/user-attachments/assets/44ad71c6-f46f-41d6-a51a-4f6c59b0a386)
+
 
 ## 🌟 Key Features
 - **📞 Bulk Call Processing:** Simultaneously manage thousands of calls
@@ -14,6 +17,7 @@ CALL.E is an intelligent bulk calling solution that automates outreach campaigns
 - **🧩 Dynamic Chunking:** Context-aware text processing with overlap
 
 ---
+![image](https://github.com/user-attachments/assets/1dfa1429-e12a-45f5-904e-1e3871c26122)
 
 ## 🛠️ Tech Stack
 | Component        | Technology                        |
@@ -131,6 +135,9 @@ print(response["result"])
   - Loss curve visualization
   - Hyperparameter sweeps
   - Retrieval quality metrics
+
+![image](https://github.com/user-attachments/assets/c554feb6-bc11-41ed-bcd0-92d4cb8c3501)
+
 
 ![WandB Dashboard](https://github.com/user-attachments/assets/38e2e7df-281e-419a-b7ce-e43f638d856c)
 
