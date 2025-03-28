@@ -156,4 +156,7 @@ CALL.E was recognized as the most innovative AI implementation at Asia's largest
 - **Context retention accuracy** (98.7%)
 - **Ethical AI practices**
 
+![Uploading WhatsApp Image 2025-03-28 at 19.18.41_2cdd4bb6.jpg…]()
+
+
 ---
