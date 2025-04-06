@@ -130,7 +130,7 @@ print(response["result"])
   - Hyperparameter sweeps
   - Retrieval quality metrics
 
-![image](https://github.com/user-attachments/assets/c554feb6-bc11-41ed-bcd0-92d4cb8c3501)
+
 
 ![WandB Dashboard](https://github.com/user-attachments/assets/38e2e7df-281e-419a-b7ce-e43f638d856c)
 
