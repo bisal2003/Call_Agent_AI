@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaFileDownload } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Dashboard = () => {
   const [isActive, setIsActive] = useState("Dashboard");
@@ -77,7 +78,7 @@ const Dashboard = () => {
       {/* Right Section - Content */}
       <div className="relative w-[70%] p-8">
         {/* NAVBAR (Exact same as previous code) */}
-        <nav className="absolute top-[16px] right-10 w-[90%] flex font-bold uppercase justify-end bg-[#374151] py-2 rounded-full px-8 space-x-6 text-lg">
+        <nav className="absolute top-[16px] right-10 w-[90%] flex font-bold uppercase justify-end bg-[#374151] py-2 rounded-full px-8 space-x-6 text-lg z-10">
           <NavLink
             to="/"
             onClick={() => setIsActive("Home")}
@@ -130,7 +131,7 @@ const Dashboard = () => {
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`pb-2 font-bold text-xl uppercase cursor-pointer ${
+              className={`pb-2 font-bold text-xl uppercase cursor-pointer z-10 ${
                 activeTab === tab.key
                   ? "border-b-2 border-blue-400 text-blue-400"
                   : "hover:text-gray-400"
@@ -142,7 +143,7 @@ const Dashboard = () => {
         </div>
 
         {/* CONTENT SECTION */}
-        <div className="mt-6">
+        <div className="relative mt-6 z-20">
           {activeTab === "summary" && (
             <div className="w-full">
               <h2 className="text-xl font-semibold mb-4">Summary list</h2>
@@ -215,6 +216,16 @@ const Dashboard = () => {
             </div>
           )}
         </div>
+        <motion.div 
+        className="absolute w-40 h-40 bg-blue-500 rounded-full opacity-30 blur-xl top-10 left-10 z-0"
+        animate={{ x: [0, 50, 0], y: [0, 50, 0] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+      />
+      <motion.div 
+        className="absolute w-40 h-40 bg-purple-500 rounded-full opacity-30 blur-xl bottom-10 right-10 z-0"
+        animate={{ x: [0, -50, 0], y: [0, -50, 0] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+      />
       </div>
     </div>
   );

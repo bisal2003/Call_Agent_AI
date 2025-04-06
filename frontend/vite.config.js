@@ -7,9 +7,6 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   theme: {
     extend: {
-      fontFamily: {
-        square: ['Square Game', 'sans-serif'],
-      },
     },
   }, // Correct placement of plugins
 })

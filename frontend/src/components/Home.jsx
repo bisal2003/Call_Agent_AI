@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center  h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
         <motion.h1 
-        className="centerhead flex text-[30vh] font-bold font-square mt-[10vh]  relative"
+        className="centerhead flex text-[8vh] md:text-[30vh] font-bold font-square mt-[30vh] md:mt-[10vh] mb-[] relative z-10"
         initial={{ opacity: 0, x: 500 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
@@ -14,7 +14,7 @@ const Home = () => {
         CALL.E
       </motion.h1>
       <motion.h1 
-        className="text-5xl font-bold mb-4 relative"
+        className="md:text-5xl font-bold mb-4 relative z-10 text-2xl "
         initial={{ opacity: 0, x: -500 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}

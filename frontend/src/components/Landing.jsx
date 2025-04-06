@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Landing = () => {
   const [isActive, setIsActive] = useState("Make a Call");
@@ -40,7 +41,7 @@ const Landing = () => {
           CALL.E
         </h1>
         <form className="space-y-4">
-          {["Agent Name", "Agent Role", "Company Name"].map((label, index) => (
+          {["Agent Name:", "Agent Role:", "Organization Name:"].map((label, index) => (
             <div key={index}>
               <label className="block text-sm font-medium mb-1">{label}</label>
               <input
@@ -52,7 +53,7 @@ const Landing = () => {
             </div>
           ))}
           <label className="block text-sm font-medium mb-1">
-            About the business:
+            Organization's objective:
           </label>
           <textarea
             placeholder="Tell us about your business"
@@ -67,10 +68,10 @@ const Landing = () => {
             required
             className="w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-500"
           />
-          <label className="block text-sm font-medium mb-1">Call Directory:</label>
+          <label className="block text-sm font-medium mb-1">To Call:</label>
           <input
-            type="file"
-            placeholder="Upload your call directory file"
+            type="number"
+            placeholder="Add a number"
             required
             className="w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-1 focus:ring-gray-500"
           />
@@ -83,7 +84,7 @@ const Landing = () => {
       {/* Right Section */}
       <section className="relative w-[70%] flex flex-col bg-gray-900 items-center justify-center p-10">
         {/* Navigation */}
-        <nav className="absolute top-[16px] right-10 w-[90%] flex font-bold uppercase justify-end bg-[#374151] py-2 rounded-full px-8 space-x-6 text-lg">
+        <nav className="absolute top-[16px] right-10 w-[90%] flex font-bold uppercase justify-end bg-[#374151] py-2 rounded-full px-8 space-x-6 text-lg z-10">
           <NavLink
             to="/"
             onClick={() => setIsActive("Home")}
@@ -128,9 +129,19 @@ const Landing = () => {
         </nav>
 
         {/* Main Content */}
-        <img src="/assets/calle.png" alt="" className="h-[40%]" />
-        <h2 className="text-5xl pt-4 font-semibold centerhead">CALL.E</h2>
-        <p className="text-lg text-gray-400">Your personal AI Call-Agent</p>
+        <img src="/assets/calle.png" alt="" className="h-[40%] z-10" />
+        <h2 className="text-5xl pt-4 font-semibold centerhead z-10">CALL.E</h2>
+        <p className="text-lg text-gray-400 z-10">Your personal AI Call-Agent</p>
+        <motion.div 
+        className="absolute w-40 h-40 bg-blue-500 rounded-full opacity-30 blur-xl top-10 left-10"
+        animate={{ x: [0, 50, 0], y: [0, 50, 0] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+      />
+      <motion.div 
+        className="absolute w-40 h-40 bg-purple-500 rounded-full opacity-30 blur-xl bottom-10 right-10"
+        animate={{ x: [0, -50, 0], y: [0, -50, 0] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+      />
       </section>
     </div>
   );
