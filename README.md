@@ -1,5 +1,3 @@
-# 🚀 CALL.E - AI-Powered Bulk Calling Agent
-**Winner of NEURATHON 2025 🏆**
 
 CALL.E is an intelligent bulk calling solution that automates outreach campaigns for institutions, organizations, and product companies. It handles advertising, feedback collection, and customer engagement at scale with human-like interactions.
 
@@ -7,11 +5,10 @@ CALL.E is an intelligent bulk calling solution that automates outreach campaigns
 ![image](https://github.com/user-attachments/assets/8f14ab67-56be-45de-af0d-4fd2db65c526)
 ![image](https://github.com/user-attachments/assets/44ad71c6-f46f-41d6-a51a-4f6c59b0a386)
 
-
 ## 🌟 Key Features
 - **📞 Bulk Call Processing:** Simultaneously manage thousands of calls
-- **🧠 Context-Aware Conversations:** Powered by Groq's Llama-3.3-70B model
-- **🎙️ Real-time Speech Processing:** Wave-based TTS and STT integration
+- **🧠 Context-Aware Conversations:** Powered by Gemini API (replacing Llama-3.3-70B)
+- **🎙️ Real-time Speech Processing:** Google Cloud Text-to-Speech (TTS) and Speech-to-Text (STT) APIs
 - **🔍 Smart Retrieval (RAG):** Pinecone vector store with Hugging Face embeddings
 - **📊 Performance Tracking:** WandB-integrated monitoring and optimization
 - **🧩 Dynamic Chunking:** Context-aware text processing with overlap
@@ -22,8 +19,8 @@ CALL.E is an intelligent bulk calling solution that automates outreach campaigns
 ## 🛠️ Tech Stack
 | Component        | Technology                        |
 |-----------------|--------------------------------|
-| **LLM Backbone** | Groq (Llama-3.3-70B)          |
-| **Speech Processing** | Wave TTS/STT                 |
+| **LLM Backbone** | Gemini API (Google)             |
+| **Speech Processing** | Google Cloud TTS/STT            |
 | **Vector Store** | Pinecone                        |
 | **Embeddings** | Hugging Face (sentence-transformers) |
 | **MLOps** | WandB                            |
@@ -34,13 +31,11 @@ CALL.E is an intelligent bulk calling solution that automates outreach campaigns
 ## 🚀 Getting Started
 ### Prerequisites
 - Python 3.9+
-- Groq API Key
+- Gemini API Key
 - Pinecone API Key
 - WandB Account
-- Wave API Key
 
 ![image](https://github.com/user-attachments/assets/fd6c6528-ffc7-4a4d-87be-de2c1f4927f5)
-
 
 ### Installation
 ```bash
@@ -59,7 +54,7 @@ npm install
 ### ⚙️ Configuration
 Create a `.env` file and add the following keys:
 ```sh
-GROQ_API_KEY=your_groq_key
+GEMINI_API_KEY=your_gemini_key
 PINECONE_API_KEY=your_pinecone_key
 WANDB_API_KEY=your_wandb_key
 INDEX_NAME=your_index_name
@@ -126,7 +121,6 @@ print(response["result"])
 
 ![image](https://github.com/user-attachments/assets/90e60d18-2c0b-4af7-8655-73a80e36b0ad)
 
-
 ---
 
 ## 📊 WandB Integration
@@ -138,25 +132,10 @@ print(response["result"])
 
 ![image](https://github.com/user-attachments/assets/c554feb6-bc11-41ed-bcd0-92d4cb8c3501)
 
-
 ![WandB Dashboard](https://github.com/user-attachments/assets/38e2e7df-281e-419a-b7ce-e43f638d856c)
 
 ---
 ## Conclusion
 
-CALL.E is a breakthrough in AI-powered bulk calling, enhancing large-scale communication with efficiency and precision. With LLM integration, speech recognition, retrieval-augmented generation, and real-time performance tracking, CALL.E stands as a premier solution for automated outreach. Its success at NEURATHON 2025 solidifies its impact on AI-driven customer interaction and scalability.
+CALL.E is a breakthrough in AI-powered bulk calling, enhancing large-scale communication with efficiency and precision. With Gemini LLM integration, speech recognition via Google Cloud APIs, retrieval-augmented generation, and real-time performance tracking, CALL.E stands as a premier solution for automated outreach. Its success at NEURATHON 2025 solidifies its impact on AI-driven customer interaction and scalability.
 
-
-
-## 🏆 Acknowledgments
-### **NEURATHON 2025 Winning Solution**
-CALL.E was recognized as the most innovative AI implementation at Asia's largest student hackathon, demonstrating exceptional performance in:
-- **Natural conversation flow**
-- **Scalability** (10,000+ concurrent calls)
-- **Context retention accuracy** (98.7%)
-- **Ethical AI practices**
-
-![Uploading WhatsApp Image 2025-03-28 at 19.18.41_2cdd4bb6.jpg…]()
-
-
----
