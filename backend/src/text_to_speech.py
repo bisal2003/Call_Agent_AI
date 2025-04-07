@@ -1,77 +1,141 @@
-import time
 import os
-import requests
-import wave
-from io import BytesIO
-from dotenv import load_dotenv
-load_dotenv()
 import uuid
+from google.cloud import texttospeech
+from pydub import AudioSegment
+from pydub.playback import play
 
-from io import BytesIO
-import wave
+# Set Google Cloud credentials
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\Asus\Desktop\Call_Agent_AI\Call_Agent_AI\neurosphere-453417-a13fa049f648.json"
 
-def save_audio_from_response(response):
-    """
-    Save WAV audio directly from the API response to a file.
-    """
-
-    os.makedirs("frontend/src/audio", exist_ok=True)
-    id = uuid.uuid4()
-    file_name = os.path.join("frontend/src/audio" , f"{id}.wav")
-    print(file_name)
-    if response.status_code == 200:
-        # Load audio content into a BytesIO stream
-        audio_stream = BytesIO(response.content)
-        # Open the WAV file from the stream for reading
-        with wave.open(audio_stream, 'rb') as wf:
-            # Open the output file for writing
-            with wave.open(file_name, 'wb') as output_file:
-                # Copy audio parameters
-                output_file.setnchannels(wf.getnchannels())
-                output_file.setsampwidth(wf.getsampwidth()) 
-                output_file.setframerate(wf.getframerate())
-                # Write audio frames
-                output_file.writeframes(wf.readframes(wf.getnframes()))
-        print(f"Audio saved successfully as {file_name}.")
-        return f"{id}.wav"
-    else:
-        print(f"Failed to generate TTS audio. Status code: {response.status_code}, Response: {response.text}")
-
-
-def play_audio_from_response(response):
+def text_to_speech(text):
+    print("Text to Speech")
     pass
+    try:
+        # Initialize Google Cloud TTS Client
+        client = texttospeech.TextToSpeechClient()
+        synthesis_input = texttospeech.SynthesisInput(text=text)
+        uuid_ = uuid.uuid4()
+
+        # Path to save audio
+        output_dir = os.path.abspath("./frontend/public/assets/")
+        if not os.path.exists(output_dir):
+            print(f"Creating directory: {output_dir}")
+            os.makedirs(output_dir)
+
+        output_file = os.path.join(output_dir, f"female_{uuid_}.mp3")
+
+        # Voice configuration
+        voice = texttospeech.VoiceSelectionParams(
+            language_code="en-IN",
+            name="en-IN-Chirp3-HD-Zephyr",
+            ssml_gender=texttospeech.SsmlVoiceGender.FEMALE
+        )
+
+        audio_config = texttospeech.AudioConfig(audio_encoding=texttospeech.AudioEncoding.MP3)
+
+        # Generate speech
+        response = client.synthesize_speech(input=synthesis_input, voice=voice, audio_config=audio_config)
+
+        # Save the audio file
+        with open(output_file, "wb") as out:
+            out.write(response.audio_content)
+            print(f"Audio successfully saved to {output_file}")
+
+        # Play using pydub
+        audio = AudioSegment.from_mp3(output_file)
+        play(audio)
+
+        # Return the accessible path for React
+        return f"/assets/female_{uuid_}.mp3"
+
+    except Exception as e:
+        import traceback
+        print("Error:", e)
+        print(traceback.format_exc())
+        return None
+
+# # Example Usage
+# # print(text_to_speech_female(
+# #     "Hello probin, I hope you're doing well. It's always great to catch up. "
+# #     "Today, I wanted to share some exciting news about a new AI-powered tool that can generate realistic voice outputs. "
+# #     "It supports multiple languages and voice types, making it ideal for podcasts, audiobooks, or even interactive chat applications. "
+# #     "Let me know if you'd like to hear more about how it works!"
+# # ))
+
+# import time
+# import os
+# import requests
+# import wave
+# from io import BytesIO
+# from dotenv import load_dotenv
+# load_dotenv()
+# import uuid
+
+# from io import BytesIO
+# import wave
+
+# def save_audio_from_response(response):
+#     """
+#     Save WAV audio directly from the API response to a file.
+#     """
+
+#     os.makedirs("frontend/src/audio", exist_ok=True)
+#     id = uuid.uuid4()
+#     file_name = os.path.join("frontend/src/audio" , f"{id}.wav")
+#     print(file_name)
+#     if response.status_code == 200:
+#         # Load audio content into a BytesIO stream
+#         audio_stream = BytesIO(response.content)
+#         # Open the WAV file from the stream for reading
+#         with wave.open(audio_stream, 'rb') as wf:
+#             # Open the output file for writing
+#             with wave.open(file_name, 'wb') as output_file:
+#                 # Copy audio parameters
+#                 output_file.setnchannels(wf.getnchannels())
+#                 output_file.setsampwidth(wf.getsampwidth()) 
+#                 output_file.setframerate(wf.getframerate())
+#                 # Write audio frames
+#                 output_file.writeframes(wf.readframes(wf.getnframes()))
+#         print(f"Audio saved successfully as {file_name}.")
+#         return f"{id}.wav"
+#     else:
+#         print(f"Failed to generate TTS audio. Status code: {response.status_code}, Response: {response.text}")
+
+
+# def play_audio_from_response(response):
+#     pass
 
 
 
-def text_to_speech(input_response="What is the weather report in india"):
-    """
-    Generate TTS audio and play it directly.
-    """
+# def text_to_speech(input_response="What is the weather report in india"):
+#     """
+#     Generate TTS audio and play it directly.
+#     """
 
-    token = os.getenv("WAVES_API_KEY_1")
-    start_in = time.time()
-    url = "https://waves-api.smallest.ai/api/v1/lightning/get_speech"
-    payload = {
-        "voice_id": "deepika",
-        "text": input_response,
-        "sample_rate": 8000,
-        "add_wav_header": True,
-        "speed" : 1.3
-    }
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Content-Type": "application/json"
-    }
-    response = requests.request("POST", url, json=payload, headers=headers)
-    end_in = time.time()
-    print(end_in - start_in)
+#     token = os.getenv("WAVES_API_KEY_1")
+#     start_in = time.time()
+#     url = "https://waves-api.smallest.ai/api/v1/lightning/get_speech"
+#     payload = {
+#         "voice_id": "deepika",
+#         "text": input_response,
+#         "sample_rate": 8000,
+#         "add_wav_header": True,
+#         "speed" : 1.3
+#     }
+#     headers = {
+#         "Authorization": f"Bearer {token}",
+#         "Content-Type": "application/json"
+#     }
+#     response = requests.request("POST", url, json=payload, headers=headers)
+#     end_in = time.time()
+#     print(end_in - start_in)
 
-    return save_audio_from_response(response)
+#     return save_audio_from_response(response)
 
-if __name__ == "__main__":
-    start = time.time()
-    text_to_speech()
-    end = time.time()
+# if __name__ == "__main__":
+#     start = time.time()
+#     text_to_speech()
+#     end = time.time()
 
 
 
